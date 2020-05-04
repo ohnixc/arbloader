@@ -1,0 +1,11 @@
+body {
+    background-color: #000000
+}
+
+.container {
+    height: 100vh;
+}
+
+div.input-group>select.custom-select {
+    flex: 0.1 1 100px;
+}

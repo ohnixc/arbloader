@@ -1,0 +1,83 @@
+<!doctype html>
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.9.1/css/tachyons.min.css" />
+
+    <title>load'em</title>
+</head>
+<html>
+
+<body class="avenir bg-near-white dove-gray">
+    <article class="cf ph3 ph5-ns pv5">
+        <header class="fn fl-ns w-50-ns pr4-ns">
+            <h1 class="f2 lh-title ttc fw9 mb3 mt0 pt3 bt bw2">
+                DOWNLOAD ALL THE THINGS YOU WANT AND NEED RIGHT NOW FOR THE LOW LOW PRICE OF FREE
+            </h1>
+            <div class="fn fl-ns w-30-ns">
+                <dl class="f6 lh-title mv2">
+                    <dt class="dib b">1</dt>
+                    <dd class="dib ml0 gray">Copy URL
+                    </dd>
+                </dl>
+                <dl class="f6 lh-title mv2">
+                    <dt class="dib b">2</dt>
+                    <dd class="dib ml0 gray">Paste URL</dd>
+                </dl>
+                <dl class="f6 lh-title mv2">
+                    <dt class="dib b">3</dt>
+                    <dd class="dib ml0 gray">Press Button</dd>
+                </dl>
+                <dl class="f6 lh-title mv2">
+                    <dt class="dib b">4</dt>
+                    <dd class="dib ml0 gray">Watch sweet sweet video</dd>
+                </dl>
+
+                <dl class="f6 lh-title mv2">
+                    <dt class="dib b">5</dt>
+                    <dd class="dib ml0 gray">Get Monies</dd>
+                </dl>
+            </div>
+        </header>
+        <div class="fn fl-ns w-30-ns">
+            <dl class="f6 lh-title mv2">
+                <p class="f5 lh-copy measure mt0-ns">
+                    <form action="/arbdl/d" method="POST">
+                        <dt class="dib b"> <input name="url" type="text" class="db w-100 pa2 ttc mt2 br2 b--dark-gray ba f6" placeholder="URL" aria-label="URL" aria-describedby="button-submit"> </dt>
+                        <dt class="dib b">  <button class="btn " name="btn-primary" type="submit" id="button-submit">Submit</button></dt>
+                    </form>
+                </p>
+            </dl>
+        </div>
+
+
+        <div class="fn fl-ns w-50-ns">
+
+            <h1 class="f1-subheadline measure fw6 mb3 mt0 pt3 bw2 near-black">
+                Download List
+            </h1>
+
+            {% for file in files %}
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <p class="f5 lh-copy measure mt0-ns">
+                        <form action="/arbdl/delete" method="post"></form>
+                        <a href="/download/{{ file }}" class="link b black hover-gold no-underline">{{ file }}</a>
+                        <button type="submit" class="btn pointer bbr2 ba near-black pa1 ml1 mv1 f7 tc bg-animate hover-bg-light-gray bn hover-b--green border-box" value="{{ file }}" name="file">Delete</button>
+                        </form>
+                    </p>
+
+                </li>
+            </ul>
+            {% endfor %}
+        </div>
+    </article>
+
+
+</body>
+
+</html>

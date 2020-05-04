@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.9.1/css/tachyons.min.css" />
+    <meta name="Description" content="Web frontend for youtube-dl">
+
+    <!-- Bootstrap CSS -->
+
+
+    <title>load'em</title>
+
+
+</head>
+
+<body class="avenir bg-near-white dove-gray">
+    <article class="cf ph3 ph5-ns pv5">
+        <div class="flex">
+            <div id="content" class="fn fl-ns w-30 pr4-ns">
+                <dl class="f6 lh-title mv2">
+                    <p class="f5 lh-copy measure mt0-ns">
+                        <dd class="dib ml0 gray">{% block content %}{% endblock %} </dd>
+                    </p>
+                </dl>
+            </div>
+            {% block head %}
+            <div class="fn fl-ns w-two-thirds">
+                <header class="fn fl-ns pr4-ns">
+                    <h1 class="f2 lh-title ttc fw9 mb3 mt0 pt3 bt bw2">
+                        DOWNLOAD ALL THE THINGS YOU WANT AND NEED RIGHT NOW FOR THE LOW LOW PRICE OF FREE
+                    </h1>
+                </header>
+                <div class="fn fl-ns w-30-ns">
+                    <dl class="f6 lh-title mv2">
+                        <dt class="dib b">1</dt>
+                        <dd class="dib ml0 gray">Copy URL
+                        </dd>
+                    </dl>
+                    <dl class="f6 lh-title mv2">
+                        <dt class="dib b">2</dt>
+                        <dd class="dib ml0 gray">Paste URL</dd>
+                    </dl>
+                    <dl class="f6 lh-title mv2">
+                        <dt class="dib b">3</dt>
+                        <dd class="dib ml0 gray">Press Button</dd>
+                    </dl>
+                    <dl class="f6 lh-title mv2">
+                        <dt class="dib b">4</dt>
+                        <dd class="dib ml0 gray">Watch sweet sweet video</dd>
+                    </dl>
+
+                    <dl class="f6 lh-title mv2">
+                        <dt class="dib b">5</dt>
+                        <dd class="dib ml0 gray">Get Monies</dd>
+                    </dl>
+                </div>
+            </div>
+            {% endblock %}
+    </article>
+
+
+</body>
+
+</html>

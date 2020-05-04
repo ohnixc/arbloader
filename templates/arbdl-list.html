@@ -1,0 +1,31 @@
+{% extends "base.html" %} {% block content %}
+
+<section class="cf w-100">
+    <div class="fl w-25 pa3 mr2 near-black dib">
+        <h1 class="f1-subheadline measure fw6 gold o-60">
+            You download a lot. </h1>
+    </div>
+    {% for file in files %}
+    <div class="flex flex-wrap w-100">
+        <div class="fl w-45 h-25 mr2 debug-grid-16 hover-bg-washed-green near-black dib">
+
+
+            <h3 class="f6 lmeasure-narrow">
+                <form action="/arbdl/delete" method="post"></form>
+                <a href="/download/{{ file }}" class="link b black hover-gold no-underline">{{ file }}</a>
+                <button type="submit" class="btn pointer bbr2 ba near-black pa1 ml1 mv1 f7 tc bg-animate hover-bg-light-gray bn hover-b--green border-box" value="{{ file }}" name="file">Delete</button>
+                </form>
+            </h3>
+        </div>
+        {% endfor %}
+        <div class="fl w-25 pa3 mr2 hover-bg-washed-green near-black dib">
+
+            <p class="f5 lh-copy measure mt0-ns tr">
+                <a class="btn no-underline btn-primary stretched-link" href="/">Some more? Fiend.</a>
+            </p>
+        </div>
+    </div>
+
+</section>
+
+{% endblock %}
