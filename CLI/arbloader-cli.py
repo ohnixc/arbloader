@@ -15,12 +15,12 @@ full_path = {
         'key': 'FFmpegVideoConvertor',
         'preferedformat': 'mp4',
     }],
-    'outtmpl': os.path.join(home, 'Desktop/yt-dl/Downloads', '%(title)s.%(ext)s'),
+    'outtmpl': os.path.join(home, 'Desktop/arbloader-cli/Downloads', '%(title)s.%(ext)s'),
     }
 
 while True:
     def file_dl():
-        file_path = os.path.join(home, 'Desktop/yt-dl/Downloads')
+        file_path = os.path.join(home, 'Desktop/arbloader-cli/Downloads')
         return file_path
 
     usr_input = input('\nURL to download: ')

@@ -1,8 +1,6 @@
 #Importing the modules to interact with the operating system
 import sys
 import os
-import signal
-from colorama import init,Fore,Style
 
 if sys.version_info[0] < 3:
     raise Exception('Python 3 or a more recent version is required.')
@@ -17,16 +15,16 @@ full_path = {
         'key': 'FFmpegVideoConvertor',
         'preferedformat': 'mp4',
     }],
-    'outtmpl': os.path.join(home, 'Desktop/yt-dl/', '%(title)s.%(ext)s'),
+    'outtmpl': os.path.join(home, 'Desktop/arbloader-cli/Downloads', '%(title)s.%(ext)s'),
     }
 
 while True:
     def file_dl():
-        file_path = os.path.join(home, 'Desktop/yt-dl/')
+        file_path = os.path.join(home, 'Desktop/arbloader-cli/Downloads')
         return file_path
 
-    dl_link = input('\nURL to download: ')
-    youtube_dl.YoutubeDL(full_path).download([dl_link])
+    usr_input = input('\nURL to download: ')
+    youtube_dl.YoutubeDL(full_path).download([usr_input])
 
 
 
@@ -38,4 +36,4 @@ while True:
         continue
     else:
         print('\nWell.. whatever then. Byeee')
-        os.kill(os.getppid(), signal.SIGHUP)
+        sys.exit()
