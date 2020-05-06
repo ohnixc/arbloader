@@ -1,0 +1,41 @@
+#Importing the modules to interact with the operating system
+import sys
+import os
+import signal
+from colorama import init,Fore,Style
+
+if sys.version_info[0] < 3:
+    raise Exception('Python 3 or a more recent version is required.')
+
+import youtube_dl
+
+home = os.path.expanduser('~')
+
+full_path = {
+    'format':'bestvideo[height<=360]+bestaudio/best[height<=360]',
+    'postprocessors': [{
+        'key': 'FFmpegVideoConvertor',
+        'preferedformat': 'mp4',
+    }],
+    'outtmpl': os.path.join(home, 'Desktop/yt-dl/', '%(title)s.%(ext)s'),
+    }
+
+while True:
+    def file_dl():
+        file_path = os.path.join(home, 'Desktop/yt-dl/')
+        return file_path
+
+    dl_link = input('\nURL to download: ')
+    youtube_dl.YoutubeDL(full_path).download([dl_link])
+
+
+
+    print('\nSuccess!! Huzzah!')
+    print('\nVideo is saved at: {}'.format(file_dl()))
+    usr_input = input('\nWant another? [y/n]: ')
+    if usr_input == 'Y' or usr_input == 'y':
+        print('\nAlright coo cool..')
+        continue
+    else:
+        print('\nWell.. whatever then. Byeee')
+        os.kill(os.getppid(), signal.SIGHUP)
